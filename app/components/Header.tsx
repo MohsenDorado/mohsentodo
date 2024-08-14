@@ -4,7 +4,7 @@ import Hero from "./Hero";
 
 const Header = () => {
     return ( 
-        <div className="h-[100px]">
+        <div className=" bg-red-50">
             Header
         </div>
      );

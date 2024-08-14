@@ -1,13 +1,13 @@
 "use server";
 const Hero = () => {
   return (
-    <div className="px-[20%] flex items-center justify-center flex-col relative pb-10  ">
-      <h1 className=" font-dancing font-fuggles font-extrabold lg:text-[100px] w-full max-lg:text-[50px]  items-center justify-center text-center">
+    <div className="flex items-center justify-center flex-col relative pb-[50px]   ">
+      <h1 className=" px-[20%] max-sm:px-[10%]  font-dancing font-fuggles font-extrabold lg:text-[100px] w-full max-lg:text-[50px]  items-center justify-center text-center">
         Welcome to MohsenTodo
       </h1>
 
-      <h2 className="font-dancing-light font-extralight  text-4xl flex max-lg:text-[30px]  items-center justify-center text-center relative">
-        Fastest TODO app you can find
+      <h2 className="px-[2%] font-dancing-light font-extralight  text-4xl flex max-lg:text-[30px]  items-center justify-center text-center relative">
+        Fastest TODO app you can find on the current galaxy.
         <div className=" max-lg:hidden absolute right-0 top-0 translate-x-[170px] translate-y-10">
           <svg
             className="fill-DarkPrimary"
@@ -19,11 +19,11 @@ const Hero = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 415.262 415.261"
           >
-            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
             <g
               id="SVGRepo_tracerCarrier"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             ></g>
             <g id="SVGRepo_iconCarrier">
               {" "}
@@ -48,9 +48,10 @@ const Hero = () => {
           </p>
         </div>
       </h2>
-      <button className="bg-Primary hover:bg-DarkPrimary rounded-xl px-10 py-5 border mt-10 text-2xl font-medium text-white transition-all
+      <button className="bg-Primary hover:bg-DarkPrimary rounded-xl px-10 py-5 border mt-10 max-sm:mt-4 text-2xl max-sm:text-lg max-sm:py-2 font-medium text-white transition-all
        duration-300">
         Start Now!
+        <span className="max-lg:hidden"> It is free</span>
       </button>
     </div>
   );
