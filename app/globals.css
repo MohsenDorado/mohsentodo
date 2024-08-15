@@ -87,3 +87,12 @@ html {
 
 
  }
+ @media (max-width: 768px) {
+  .scaledsm{
+    border-radius: 50% 50% 0% 0%;
+    transform: scaleX(2);
+  
+    
+
+  }
+ }
