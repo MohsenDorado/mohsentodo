@@ -14,7 +14,7 @@ const Header = () => {
       </Link>
       <div className="flex items-center justify-center gap-[10px]">
         {result.map((route) => (
-          <Link href={route.href} className={clsx(`text-white z-50 border rounded-md px-4 py-2
+          <Link key={route.href} href={route.href} className={clsx(`text-white z-50 border rounded-md px-4 py-2
            hover:bg-DarkPrimary bg-LightPrimary font-medium transition-all duration-200`,
            route.label==="Profile" && 'text-black'
            )}>
