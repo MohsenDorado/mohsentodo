@@ -8,7 +8,7 @@ const Features = () => {
   return (
     <div className="w-full mt-[100px] flex items-center justify-center flex-col max-sm:px-2  lrg:px-[170px] relative z-50 ">
       
-      <h1 className=" font-dancing text-[5em] max-md:text-[4em] font-extrabold tracking-tighter text-DarkPrimary">
+      <h1 className=" font-dancing text-[5em] max-md:text-[4em] font-extrabold tracking-tighter text-DarkPrimary text-center">
         What is this app?
       </h1>
       <div className="text-2xl flex items-center justify-center text-center max-sm:text-xl px-10 text-slate-600">

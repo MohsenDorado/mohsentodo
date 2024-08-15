@@ -8,7 +8,7 @@ import Curved from "../components/Curved";
 
 export default async function Home() {
   return (
-    <div>
+    <div className="relative">
       <Curved/>
       <Hero/>
         <Features />
