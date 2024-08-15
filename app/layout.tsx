@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-    <body className="">
+    <body className="pb-[110px]">
       <Header/>
       {children}
       <MobileFooter/>

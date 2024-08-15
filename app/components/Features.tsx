@@ -6,7 +6,7 @@ import getFeatures from "../actions/getFeatures";
 const Features = () => {
   const features=getFeatures();
   return (
-    <div className="w-full mt-[100px] flex items-center justify-center flex-col max-sm:px-2  lrg:px-[170px] relative z-50 ">
+    <div className="w-full mt-[100px] flex items-center justify-center flex-col max-sm:px-[30px]  lrg:px-[170px] relative z-50 ">
       
       <h1 className=" font-dancing text-[5em] max-md:text-[4em] font-extrabold tracking-tighter text-DarkPrimary text-center">
         What is this app?
@@ -17,7 +17,7 @@ const Features = () => {
         Maybe at first my intension was to just practice frontend dev skills but... I really worked on this for long.
         Hope you enjoy it!
       </div>
-      <h1 className=" font-dancing text-[5em] font-extrabold tracking-tighter text-DarkPrimary">
+      <h1 className=" font-dancing text-[5em] max-sm:text-[4em] font-extrabold tracking-tighter text-DarkPrimary text-center">
         The features
       </h1>
       <div className="grid max-lrg:grid-cols-2 max-sm:grid-cols-1 grid-cols-4 mt-10 gap-10 w-full max-sm:px-1 max-lg:px-[100px]">

@@ -1,4 +1,7 @@
 "use server";
+
+import Curved from "./Curved";
+
 const Hero = () => {
   return (
     <div className="z-50 flex items-center justify-center flex-col relative pb-[50px] max-lrg:mt-[100px]">

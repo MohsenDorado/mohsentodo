@@ -36,7 +36,7 @@ const FeatureCard = ({
             
             </div>
        
-            <FaLocationArrow  className='group-hover:-translate-y-6 group-hover:translate-x-3 -translate-y-3   transition-all duration-100 w-10 h-10 ' />
+            <FaLocationArrow  className='text-white group-hover:-translate-y-6 group-hover:translate-x-3 -translate-y-3   transition-all duration-200 w-10 h-10 ' />
     </Link>
   )
 }
