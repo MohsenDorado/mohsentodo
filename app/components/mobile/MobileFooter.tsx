@@ -15,12 +15,12 @@ const MobileFooter = () => {
         w-full 
         h-[60px]
         bottom-0 
-        z-40 
+        z-50 
         flex 
         items-center 
         bg-white 
         border-t-[1px] 
-        lg:hidden
+        lrg:hidden
       "
     >
       {routes.map((route) => (

@@ -7,7 +7,11 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    
     extend:{
+      screens:{
+        "lrg":"1150px",
+      },
       colors:{
         "LightPrimary":"#59a2f2",
         "Primary":"#3178c6",

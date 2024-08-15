@@ -1,14 +1,14 @@
 "use server";
 const Hero = () => {
   return (
-    <div className="flex items-center justify-center flex-col relative pb-[50px]   ">
-      <h1 className=" px-[20%] max-sm:px-[10%]  font-dancing font-fuggles font-extrabold lg:text-[100px] w-full max-lg:text-[50px]  items-center justify-center text-center">
+    <div className="z-50 flex items-center justify-center flex-col relative pb-[50px] max-lrg:mt-[100px]">
+      <h1 className=" px-[5%] max-sm:px-[5%]  font-dancing font-fuggles font-extrabold lrg:text-[100px] w-full max-lrg:text-[50px]  items-center justify-center text-center">
         Welcome to MohsenTodo
       </h1>
 
-      <h2 className="px-[2%] font-dancing-light font-extralight  text-4xl flex max-lg:text-[30px]  items-center justify-center text-center relative">
+      <h2 className="px-1 font-dancing-light font-extralight text-4xl flex max-lrg:text-[30px]  items-center justify-center text-center relative">
         Fastest TODO app you can find on the current galaxy.
-        <div className=" max-lg:hidden absolute right-0 top-0 translate-x-[170px] translate-y-10">
+        <div className=" max-lrg:hidden absolute right-0 top-0 translate-x-[140px] translate-y-10">
           <svg
             className="fill-DarkPrimary"
             width={100}
@@ -48,10 +48,10 @@ const Hero = () => {
           </p>
         </div>
       </h2>
-      <button className="bg-Primary hover:bg-DarkPrimary rounded-xl px-10 py-5 border mt-10 max-sm:mt-4 text-2xl max-sm:text-lg max-sm:py-2 font-medium text-white transition-all
+      <button className="bg-Primary hover:bg-DarkPrimary rounded-xl px-10 py-5 border mt-10 max-sm:mt-4 text-2xl max-sm:text-lrg max-sm:py-3 font-medium text-white transition-all
        duration-300">
         Start Now!
-        <span className="max-lg:hidden"> It is free</span>
+        <span className="max-lrg:hidden"> It is free</span>
       </button>
     </div>
   );
