@@ -3,11 +3,12 @@ import React from "react";
 import FeatureCard from "./FeatureCard";
 import getFeatures from "../actions/getFeatures";
 import Link from "next/link";
+// import SliderTest from "./SliderTest";
 
 const Features = () => {
   const features=getFeatures();
   return (
-    <div className="w-full mt-[100px] flex items-center justify-center flex-col max-sm:px-[30px]  lrg:px-[170px] relative z-50 ">
+    <div className="w-full mt-[100px] max-sm:mt-[20px] flex items-center justify-center flex-col max-sm:px-[10px]  lrg:px-[170px] relative z-50 ">
       
       <h1 className=" caveat text-[5em] max-md:text-[4em] font-extrabold tracking-tighter text-DarkPrimary text-center">
         What is this app?
@@ -36,6 +37,7 @@ const Features = () => {
           <FeatureCard key={feature.name} icon={feature.icon} name={feature.name} url={feature.url} />
 
         ))
+        
       }      </div>
 
       

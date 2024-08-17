@@ -45,9 +45,9 @@ const MobileItem: React.FC<MobileItemProps> = ({
 
       <p
         className={clsx(
-          `text-sm font-dancing-light pb-1`,
+          `text-sm  pb-1`,
           active &&
-            "font-dancing text-md text-black font-extrabold transition-all duration-100"
+            " text-md text-black font-extrabold transition-all duration-100"
         )}
       >
         {label}

@@ -4,53 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* .dancing-script{
-  font-family: "Dancing Script", cursive;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.fuggles-regular {
-    font-family: "Fuggles", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-
-  .pacifico-regular {
-    font-family: "Pacifico", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-   */
-@font-face {
-  font-family: "Fuggles-Regular";
-  src: url("/fonts/Fuggles-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-.font-fuggles {
-  font-family: "Fuggles-Regular", cursive;
-}
-@font-face {
-  font-family: "DancingScript-Bold";
-  src: url("/fonts/DancingScript-Bold.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-.font-dancing {
-  font-family: "DancingScript-Bold", cursive;
-}
-@font-face {
-  font-family: "DancingScript-Regular";
-  src: url("/fonts/DancingScript-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-.font-dancing-light {
-  font-family: "DancingScript-Regular", cursive;
-}
 @font-face {
   font-family: "Caveat Brush";
   src: url("/fonts/CaveatBrush-Regular.ttf") format("truetype");

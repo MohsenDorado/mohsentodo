@@ -26,7 +26,7 @@ const featurePage = ({params}:Props) => {
 
   return (
     <div>
-    <h1 className='mt-[50px] text-7xl max-sm:text-5xl max-lrg:text-6xl font-dancing font-extrabold text-center'>{feature?.name}</h1>
+    <h1 className='mt-[50px] text-7xl max-sm:text-5xl max-lrg:text-6xl caveat font-extrabold text-center'>{feature?.name}</h1>
     <h3 className='text-center sm:text-lg lg:text-2xl text-sm mt-10 max-sm:px-8 px-[200px]'>{feature?.description}</h3>
     </div>
   )

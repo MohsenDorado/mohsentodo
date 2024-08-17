@@ -12,6 +12,7 @@ const MobileFooter = () => {
 
         fixed 
         justify-between 
+        caveat-light
         w-full 
         h-[60px]
         bottom-0 

@@ -5,12 +5,12 @@ import Curved from "./Curved";
 
 const Hero = () => {
   return (
-    <div className="z-50 flex items-center justify-center flex-col relative pb-[50px] max-lrg:mt-[100px]">
+    <div className="z-50 flex items-center justify-center flex-col relative pb-[50px] max-lrg:mt-[40px]">
       <h1 className=" px-[5%] max-sm:px-[5%] caveat font-fuggles font-extrabold lrg:text-[100px] w-full max-lrg:text-[50px]  items-center justify-center text-center">
         Welcome to MohsenTodo
       </h1>
 
-      <h2 className="px-1  font-extralight text-4xl flex max-lrg:text-[30px] caveat-light  items-center justify-center text-center relative">
+      <h2 className="px-3  font-extralight text-4xl flex max-lrg:text-[30px] caveat-light  items-center justify-center text-center relative">
         Fastest TODO app you can find on the current galaxy.
         <div className=" max-lrg:hidden absolute right-0 top-0 translate-x-[140px] translate-y-10">
           <svg

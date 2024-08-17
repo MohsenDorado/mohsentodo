@@ -1,9 +1,8 @@
 import { useMemo } from "react";
 import { usePathname } from "next/navigation";
-import { HiChat } from 'react-icons/hi';
-import { HiArrowLeftOnRectangle, HiUsers } from 'react-icons/hi2';
-import { FaRegUserCircle, FaUserCircle } from "react-icons/fa";
+import { FaUserCircle } from "react-icons/fa";
 import { IoCheckbox, IoCheckboxOutline, IoHome, IoHomeOutline } from "react-icons/io5";
+import { PiUserCircleLight } from "react-icons/pi";
 
 const useRoutes = () => {
   const pathname = usePathname();
@@ -12,7 +11,7 @@ const useRoutes = () => {
     { 
       label: 'Profile', 
       href: '/profile', 
-      icon: FaRegUserCircle ,
+      icon: PiUserCircleLight  ,
       activeIcon:FaUserCircle,
       active: pathname.includes('/profile'),
     },
