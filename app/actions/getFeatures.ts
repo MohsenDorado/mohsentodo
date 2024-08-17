@@ -13,11 +13,11 @@ import { TbBrandOpenSource } from "react-icons/tb";
         icon: IconType; // Adjust the type according to your actual icon component type
       };
 const getFeatures=():Feature[]=>{
-      
+
 
 const features:Feature[] = [
   {
-    name: "No auth needed",
+    name: "Fast Auth",
     url:"no-auth-needed",
     description:
       "Earn a fast badge for a website needs a lot of effort and many things should be considered. In my todo app MohsenTodo you do not have to take many steps to start working with the actuall app. Actually if you do not need an account to save your progress you can immediately start working with MohsenTodo in no time...",

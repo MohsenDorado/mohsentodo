@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <div className="max-lrg:hidden lrg:px-[170px] flex items-center justify-between p-4 z-50">
-      <Link href="/" className="font-dancing font-extrabold z-50 text-5xl">
+      <Link href="/" className="caveat font-extrabold z-50 text-5xl">
         Mohsen<span className="text-Primary">TODO</span>
       </Link>
       <div className="flex items-center justify-center gap-[10px]">

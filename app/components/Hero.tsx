@@ -1,15 +1,16 @@
 "use server";
 
+import Link from "next/link";
 import Curved from "./Curved";
 
 const Hero = () => {
   return (
     <div className="z-50 flex items-center justify-center flex-col relative pb-[50px] max-lrg:mt-[100px]">
-      <h1 className=" px-[5%] max-sm:px-[5%]  font-dancing font-fuggles font-extrabold lrg:text-[100px] w-full max-lrg:text-[50px]  items-center justify-center text-center">
+      <h1 className=" px-[5%] max-sm:px-[5%] caveat font-fuggles font-extrabold lrg:text-[100px] w-full max-lrg:text-[50px]  items-center justify-center text-center">
         Welcome to MohsenTodo
       </h1>
 
-      <h2 className="px-1 font-dancing-light font-extralight text-4xl flex max-lrg:text-[30px]  items-center justify-center text-center relative">
+      <h2 className="px-1  font-extralight text-4xl flex max-lrg:text-[30px] caveat-light  items-center justify-center text-center relative">
         Fastest TODO app you can find on the current galaxy.
         <div className=" max-lrg:hidden absolute right-0 top-0 translate-x-[140px] translate-y-10">
           <svg
@@ -51,11 +52,11 @@ const Hero = () => {
           </p>
         </div>
       </h2>
-      <button className="bg-Primary hover:bg-DarkPrimary rounded-xl px-10 py-5 border mt-10 max-sm:mt-4 text-2xl max-sm:text-lrg max-sm:py-3 font-medium text-white transition-all
+      <Link href="/my-todos" className="bg-Primary hover:bg-DarkPrimary rounded-xl px-10 py-5 border mt-10 max-sm:mt-4 text-2xl max-sm:text-lrg max-sm:py-3 font-medium text-white transition-all
        duration-300">
         Start Now!
         <span className="max-lrg:hidden"> It is free</span>
-      </button>
+      </Link>
     </div>
   );
 };
