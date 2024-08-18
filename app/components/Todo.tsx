@@ -7,9 +7,10 @@ import Button from "./Button";
 const Todos = () => {
 
     const [newTodo, setNewTodo] = useState('');
-    const { todos, loading, addTodo, toggleTodo, deleteTodo } = useTodoStore(
+    const {DeleteLoading, todos, loading, addTodo, toggleTodo, deleteTodo } = useTodoStore(
       (state) => ({
         todos: state.todos,
+        DeleteLoading:state.DeleteLoading,
         loading: state.loading,
         addTodo: state.addTodo,
         toggleTodo: state.toggleTodo,
@@ -23,15 +24,37 @@ const Todos = () => {
       addTodo(newTodo);
       setNewTodo('');
     };
+
+    
   
   
     return ( 
         <div>
-          <form onSubmit={(e)=>handleAddTodo(e)} >
+         
+          <form
+          className="flex items-center justify-center flex-row gap-5 w-full mb-10"
+          onSubmit={(e)=>handleAddTodo(e)} >
 
 
-          <input type="text" className="" value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} placeholder="What is Todo?" />
-          <Button varient="Confirm" text="Add" />
+          <input
+            className="h-full border border-black py-2 px-3 rounded-md w-[75%]"
+           type="text"
+          
+           value={newTodo} onChange={(e)=>setNewTodo(e.target.value)} placeholder="What is Todo?" />
+           <div className="w-[25%]">
+
+          <Button disabled={newTodo.trim()===''} varient="Confirm" text={loading?
+            (
+
+              <div className="flex items-center justify-center w-full ">
+                <p className="loader"></p>
+
+            
+          </div>
+          )
+             : (<p>Add</p>)} />
+           </div>
+          
           </form>
           {todos.map((todo) => (
             <li
@@ -51,9 +74,10 @@ const Todos = () => {
               <button
                 className="px-2 py-1 text-red-500"
                 onClick={() => deleteTodo(todo.id)}
-                disabled={loading}  // Disable delete button when loading
+                disabled={DeleteLoading}  // Disable delete button when loading
               >
-                Delete
+                {todo.deleting?"Loading":"Delete"}
+                
               </button>
             </li>
           ))}

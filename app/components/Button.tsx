@@ -5,11 +5,13 @@ import React from "react";
 export type Varients = 'Confirm' | 'Delete' | 'BlueDarks' | 'Blue'|'BlueLight'
 
 
-const Button = ({ varient, text }: { varient: Varients; text: string }) => {
+const Button = ({ varient, text,disabled }: { varient: Varients; text: any; disabled?:boolean }) => {
 
 return(
-  <button className={clsx(`w-full px-3 py-2 text-sm font-semibold border hover:brightness-90 transition-all duration-300 rounded-md`,
-    varient==="Confirm"&&"bg-green-500"
+  <button
+  disabled={false||disabled}
+   className={clsx(`w-full px-3 py-2 text-sm font-semibold border hover:brightness-125 disabled:hover:brightness-100 transition-all duration-100 rounded-md `,
+    varient==="Confirm"&&"bg-green-400"||varient==="Delete"&&"bg-red-500"
     
 
   )}>
