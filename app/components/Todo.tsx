@@ -5,6 +5,7 @@ import useTodoStore from "../store/useTodoStore";
 import Button from "./Button";
 import Modal from "./Modal";
 import { motion, AnimatePresence } from "framer-motion";
+import { FaTrash } from "react-icons/fa";
 
 const Todos = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,6 +32,24 @@ const Todos = () => {
   const handleDeleteTodo = (id: any) => {
     setIsModalOpen(true);
     setDeletingTodo(id);
+  };
+  const getTimeAgo = (timestamp: number): string => {
+    const now = Date.now();
+    const secondsAgo = Math.floor((now - timestamp) / 1000);
+    if (secondsAgo < 10) {
+      return `Just Now`;
+    } else if (secondsAgo < 60) {
+      return `${secondsAgo} seconds ago`;
+    } else if (secondsAgo < 3600) {
+      const minutesAgo = Math.floor(secondsAgo / 60);
+      return `${minutesAgo} minutes ago`;
+    } else if (secondsAgo < 86400) {
+      const hoursAgo = Math.floor(secondsAgo / 3600);
+      return `${hoursAgo} hours ago`;
+    } else {
+      const daysAgo = Math.floor(secondsAgo / 86400);
+      return `${daysAgo} days ago`;
+    }
   };
 
   const handleDeleteButton = () => {
@@ -119,7 +138,7 @@ const Todos = () => {
             exit={{ opacity: 0, scale: 0.3 }}
             transition={{ duration: 0.5 }}
             key={todo.id}
-            className={`flex justify-between items-center p-2 border rounded ${
+            className={`my-4 flex justify-between items-center p-2 border rounded ${
               todo.completed ? "line-through" : ""
             }`}
           >
@@ -131,12 +150,13 @@ const Todos = () => {
             >
               {todo.title}
             </span>
+              <p className="text-sm text-slate-400">{getTimeAgo(todo.creationDate)}</p>
             <button
               className="px-2 py-1 text-red-500"
               onClick={() => handleDeleteTodo(todo.id)}
               disabled={DeleteLoading} // Disable delete button when loading
             >
-              Delete
+              <FaTrash className="" />
             </button>
           </motion.li>
         ))}

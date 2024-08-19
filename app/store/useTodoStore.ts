@@ -7,6 +7,7 @@ interface Todo {
   title: string;
   completed: boolean;
   deleting:boolean;
+  creationDate:number;
 }
 
 interface TodoStore {
@@ -19,6 +20,16 @@ interface TodoStore {
   toggleTodo: (id: number) => void;
   deleteTodo: (id: number) => void;
 }
+const date: Date = new Date();
+const day: number = date.getDate();
+const month: string = date.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+const year: number = date.getFullYear();
+const handleCreationDate:string=`${day}${month}${year}`;
+const handleCreationDate2 = (): string => {
+  
+  
+  return `${day}${month}${year}`;
+};
 
  const useTodoStore = create<TodoStore>()(
   persist(
@@ -34,7 +45,7 @@ interface TodoStore {
           set((state) => ({
             todos: [
               ...state.todos,
-              { id: Date.now(), title, completed: false,deleting:false },
+              {creationDate:Date.now(), id: Date.now(), title, completed: false,deleting:false },
             ],
             loading: false,
           }));
