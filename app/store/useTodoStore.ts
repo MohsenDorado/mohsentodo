@@ -52,15 +52,13 @@ const handleCreationDate2 = (): string => {
         }, 1000);  // Delay for 1 second
       },
       toggleTodo: (id) => {
-        set({ loading: true });
-        setTimeout(() => {
+        
           set((state) => ({
             todos: state.todos.map((todo) =>
               todo.id === id ? { ...todo, completed: !todo.completed } : todo
             ),
-            loading: false,
           }));
-        }, 500);  // Simulate a short delay
+         // Simulate a short delay
       },
       deleteTodo: (id) => {
         set({ DeleteLoading: true });

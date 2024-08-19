@@ -1,4 +1,6 @@
 "use client";
+import { MdCheckBox, MdCheckBoxOutlineBlank } from "react-icons/md";
+
 
 import { useEffect, useState } from "react";
 import useTodoStore from "../store/useTodoStore";
@@ -8,6 +10,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FaTrash } from "react-icons/fa";
 
 const Todos = () => {
+  
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [deletingTodo, setDeletingTodo] = useState<any>();
   const [deleting, setDeleting] = useState(false);
@@ -138,10 +142,18 @@ const Todos = () => {
             exit={{ opacity: 0, scale: 0.3 }}
             transition={{ duration: 0.5 }}
             key={todo.id}
-            className={`my-4 flex justify-between items-center p-2 border rounded ${
-              todo.completed ? "line-through" : ""
-            }`}
+            className={`my-4 flex justify-between items-center p-2 border rounded-lg `}
           >
+            <div className="mr-2">
+              {todo.completed?
+              <MdCheckBox className="w-8 h-8" />
+              :
+
+
+            <MdCheckBoxOutlineBlank className="w-8 h-8"/>
+              }
+
+            </div>
             <span
               className={`cursor-pointer flex-1 ${
                 todo.completed ? "text-gray-500" : ""
@@ -150,13 +162,13 @@ const Todos = () => {
             >
               {todo.title}
             </span>
-              <p className="text-sm text-slate-400">{getTimeAgo(todo.creationDate)}</p>
+              <div className="text-sm text-slate-400">{getTimeAgo(todo.creationDate)}</div>
             <button
               className="px-2 py-1 text-red-500"
               onClick={() => handleDeleteTodo(todo.id)}
               disabled={DeleteLoading} // Disable delete button when loading
             >
-              <FaTrash className="" />
+              <FaTrash className="w-8 h-8" />
             </button>
           </motion.li>
         ))}
