@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import useTodoStore from "../store/useTodoStore";
 import Button from "./Button";
 import Modal from "./Modal";
+import { motion, AnimatePresence } from 'framer-motion';
+
 
 const Todos = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -131,8 +133,14 @@ const Todos = () => {
           />
         </div>
       </form>
+      <AnimatePresence>
+
       {todos.map((todo) => (
-        <li
+        <motion.li
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.3 }}
+        transition={{ duration: 0.5 }}
           key={todo.id}
           className={`flex justify-between items-center p-2 border rounded ${
             todo.completed ? "line-through" : ""
@@ -153,8 +161,10 @@ const Todos = () => {
           >
             Delete
           </button>
-        </li>
+        </motion.li>
       ))}
+            </AnimatePresence>
+
     </div>
   );
 };
