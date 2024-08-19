@@ -52,25 +52,17 @@ interface TodoStore {
         }, 500);  // Simulate a short delay
       },
       deleteTodo: (id) => {
-        set((state) => ({
-          todos: state.todos.map((todo) =>
-            todo.id === id ? { ...todo, deleting:!todo.deleting } : todo
-          ),
-          loading: false,
-        }));
+        set({ DeleteLoading: true });
+
         setTimeout(() => {
           set((state) => ({
             todos: state.todos.filter((todo) => todo.id !== id),
             DeleteLoading: false,
           }));
-        }, 500);
+        }, 1000);
+
         
-        set((state) => ({
-          todos: state.todos.map((todo) =>
-            todo.id === id ? { ...todo, deleting:!todo.deleting } : todo
-          ),
-          loading: false,
-        }));
+  
         // Simulate a short delay
       },
     }),

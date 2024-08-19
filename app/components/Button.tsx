@@ -10,8 +10,8 @@ const Button = ({ varient, text,disabled }: { varient: Varients; text: any; disa
 return(
   <button
   disabled={false||disabled}
-   className={clsx(`w-full px-3 py-2 text-sm font-semibold border hover:brightness-125 disabled:hover:brightness-100 transition-all duration-100 rounded-md `,
-    varient==="Confirm"&&"bg-green-400"||varient==="Delete"&&"bg-red-500"
+   className={clsx(`border-none w-full px-3 py-2 text-sm font-semibold border hover:brightness-125 disabled:hover:brightness-100 transition-all duration-100 rounded-md `,
+    varient==="Confirm"&&"bg-green-400 text-white"||varient==="Delete"&&"bg-red-500"
     
 
   )}>
