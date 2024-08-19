@@ -4,13 +4,12 @@ import { useEffect, useState } from "react";
 import useTodoStore from "../store/useTodoStore";
 import Button from "./Button";
 import Modal from "./Modal";
-import { motion, AnimatePresence } from 'framer-motion';
-
+import { motion, AnimatePresence } from "framer-motion";
 
 const Todos = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [deletingTodo, setDeletingTodo] = useState<any>();
-  const [deleting, setDeleting] = useState(false)
+  const [deleting, setDeleting] = useState(false);
 
   const [newTodo, setNewTodo] = useState("");
   const { DeleteLoading, todos, loading, addTodo, toggleTodo, deleteTodo } =
@@ -36,43 +35,24 @@ const Todos = () => {
 
   const handleDeleteButton = () => {
     try {
-      setDeleting(true)
+      setDeleting(true);
       deleteTodo(deletingTodo);
 
       setDeletingTodo("");
-     
     } catch (error) {
       setIsModalOpen(false);
-    }  finally{
-      setDeleting(false)
-    
+    } finally {
+      setDeleting(false);
     }
-      
-    
   };
   useEffect(() => {
-    if (deleting===false&&DeleteLoading===false) {
-      setIsModalOpen(false)
-      
+    if (deleting === false && DeleteLoading === false) {
+      setIsModalOpen(false);
     }
-    
-    
-    
-    
-    
-    
-  }, [DeleteLoading])
-  
+  }, [DeleteLoading]);
 
   return (
     <div>
-      <button
-        className="px-4 py-2 font-semibold text-white bg-blue-500 rounded-md hover:bg-blue-700"
-        onClick={() => setIsModalOpen(true)}
-      >
-        Open Modal
-      </button>
-
       <Modal
         deletingTodo={deletingTodo}
         isOpen={isModalOpen}
@@ -92,15 +72,13 @@ const Todos = () => {
             onClick={handleDeleteButton}
             className="font-semibold p-1 text-md rounded-md border-none text-white bg-red-400 w-[100px] h-[50px]"
           >
-            {
-              DeleteLoading ? (
-                <div className="flex items-center justify-center w-full ">
-                  <p className="loader"></p>
-                </div>
-              ) : (
-                <p>Delete</p>
-              )
-            }
+            {DeleteLoading ? (
+              <div className="flex items-center justify-center w-full ">
+                <p className="loader"></p>
+              </div>
+            ) : (
+              <p>Delete</p>
+            )}
           </button>
         </div>
       </Modal>
@@ -134,37 +112,35 @@ const Todos = () => {
         </div>
       </form>
       <AnimatePresence>
-
-      {todos.map((todo) => (
-        <motion.li
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.3 }}
-        transition={{ duration: 0.5 }}
-          key={todo.id}
-          className={`flex justify-between items-center p-2 border rounded ${
-            todo.completed ? "line-through" : ""
-          }`}
-        >
-          <span
-            className={`cursor-pointer flex-1 ${
-              todo.completed ? "text-gray-500" : ""
+        {todos.map((todo) => (
+          <motion.li
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.3 }}
+            transition={{ duration: 0.5 }}
+            key={todo.id}
+            className={`flex justify-between items-center p-2 border rounded ${
+              todo.completed ? "line-through" : ""
             }`}
-            onClick={() => toggleTodo(todo.id)}
           >
-            {todo.title}
-          </span>
-          <button
-            className="px-2 py-1 text-red-500"
-            onClick={() => handleDeleteTodo(todo.id)}
-            disabled={DeleteLoading} // Disable delete button when loading
-          >
-            Delete
-          </button>
-        </motion.li>
-      ))}
-            </AnimatePresence>
-
+            <span
+              className={`cursor-pointer flex-1 ${
+                todo.completed ? "text-gray-500" : ""
+              }`}
+              onClick={() => toggleTodo(todo.id)}
+            >
+              {todo.title}
+            </span>
+            <button
+              className="px-2 py-1 text-red-500"
+              onClick={() => handleDeleteTodo(todo.id)}
+              disabled={DeleteLoading} // Disable delete button when loading
+            >
+              Delete
+            </button>
+          </motion.li>
+        ))}
+      </AnimatePresence>
     </div>
   );
 };
